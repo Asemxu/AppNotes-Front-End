@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400&display=swap');
-main{
+.main{
     width:100%;
     height:100vh;
     background-color: #7BDAF3;
+    font-family:'Kumbh Sans', sans-serif;
     display:flex;
     justify-content: center;
-    align-items: center;
-    font-family:'Kumbh Sans', sans-serif; ;
+    align-items: center;   
 }
 
 .container-login{
@@ -43,23 +42,12 @@ main{
     margin-top:120px;
 }
 
-.w-75{
-    width:75%
+.container-body-loader{
+    margin-top: 150px;
+    margin-bottom: 60px;
 }
 
-.w-85{
-    width:85%
-}
-
-.w-100{
-    width:100%
-}
-
-.d-block{
-    display:block;
-}
-
-.input-email,.input-pass{
+.input-email,.input-pass , .input{
     outline:none;
     height:2rem;
     font-family:'Kumbh Sans', sans-serif;
@@ -69,7 +57,7 @@ main{
     transition:all 500ms;
 }
 
-.input-email::placeholder,.input-pass::placeholder{
+.input-email::placeholder,.input-pass::placeholder,.input::placeholder{
     color:rgba(187, 187, 187, 0.982);
 }
 
@@ -78,7 +66,7 @@ main{
     border:1px #9EC862 solid;
 }
 
-.input-email{
+.input-email,.input-pass,.input{
     margin-bottom:1rem;
 }
 
@@ -86,7 +74,6 @@ main{
     text-align: right;
     color:#9EC862;
     text-decoration: none;
-    margin-top:0.5rem;
     margin-bottom: 0.75rem;
 }
 
@@ -109,12 +96,14 @@ main{
     cursor:pointer;
     transition:all 500ms;
     margin-bottom: 0.5rem;
+    outline:none;
 }
 
 .btn-login:hover{
     opacity:0.7;
     padding:0.5rem 2.5rem;
 }
+
 
 .link-registrate{
     width:100%;
@@ -138,9 +127,121 @@ main{
     opacity:0.8;
 }
 
+
+.modal{
+    position:absolute;
+    background-color: white;
+    height:30%;
+    width:30%;
+    border-radius: 15px;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    -webkit-box-shadow: 7px 3px 21px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 3px 21px -5px rgba(0,0,0,0.75);
+    box-shadow: 7px 3px 21px -5px rgba(0,0,0,0.75);
+}
+
+.background-modal{
+    position:absolute;
+    background:rgba(128, 128, 128, 0.338);
+    width:100%;
+    height:100%;
+}
+
+.modal-header{
+    position:absolute;
+    top:-32.5%;
+    width:100%;
+}
+
+.modal-header > img{
+    width:100px;
+}
+
+.modal-header > img{
+    width:100px;
+}
+
+.modal-header > h5{
+    font-weight: 100;
+    color:gray;
+}
+
+.modal-header :nth-child(1){
+    position:absolute;
+    right:-2.5%;
+    bottom:35%;
+    width:37.5px;
+    cursor:pointer;
+    transition:all 500ms;
+}
+
+.modal-header :nth-child(1):hover{
+    opacity:0.8;
+}
+
+
+.modal-body{
+    margin-top:77.5px;
+    height:calc(100% - 69px)
+}
+
+.modal-body > img{
+    width:25%;
+}
+.modal-body > h4{
+    font-weight: 100;
+    margin-top:0.5rem;
+}
+
+
+.btn-send-email{
+    border:none;
+    font-family:'Kumbh Sans', sans-serif;
+    font-weight: 100;
+    cursor:pointer;
+    outline:none;
+    height: calc(100% - 48px);
+    border-radius: 0 0 15px 15px;
+    color:white;
+    background-color: #9EC862;
+
+}
+
+.btn-send-email:hover{
+    opacity:0.8;
+}
+
+.Toastify__toast-container > *{
+    font-family:'Kumbh Sans', sans-serif!important;
+}
+
+.loader-container-modal{
+    margin-top:85px;
+}
+
+
 @media screen and (min-width:1000px){
     .container-login{
         width:35%;
         height:55%;
+    }
+}
+
+@media screen and (max-width:750px){
+    .modal{
+        width:45%;
+    }
+}
+
+
+@media screen and (max-width:500px){
+    .container-login{
+        width:75%;
+    }
+    .modal{
+        width:70%;
     }
 }

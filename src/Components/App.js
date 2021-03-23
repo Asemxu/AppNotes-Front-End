@@ -1,5 +1,5 @@
 import './App.css';
-import  { Switch , Route , BrowserRouter, Redirect  } from 'react-router-dom';
+import  { Switch , Route , BrowserRouter  } from 'react-router-dom';
 import Layout from '../Layout/Layout';
 import Login from '../Pages/Login/Login';
 import React from 'react';
@@ -35,8 +35,8 @@ export default class App extends React.Component {
               }
                {this.state.isLogued &&
                 <React.Fragment>
-                  <Redirect to="/" />
-                  <Route exact path="/**" component={Home} />
+                  <Route exact path="/" component={Home} />
+                  {/* <Route component={notFound} /> */}
                 </React.Fragment> 
               }
             </Switch>

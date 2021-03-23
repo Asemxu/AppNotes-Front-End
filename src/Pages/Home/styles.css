@@ -1,0 +1,44 @@
+.main-home{
+    width:100%;
+    margin-top:50px;
+    min-height:calc(100vh - 50px);
+    padding-top:1.5rem;
+    background-color: #7BDAF3;
+    font-family:'Kumbh Sans', sans-serif;
+}
+
+.navbar{
+    height:50px;
+    display:flex;
+    padding:0 1rem;
+    width:100%;
+    background:white;
+    position:fixed;
+    top:0;
+    -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 60%);
+    -moz-box-shadow: 0 0 10px 0 rgb(0 0 0 / 60%);
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 60%);
+    font-family:'Kumbh Sans', sans-serif;
+}
+
+.navbar-header{
+    height: 100%;
+    display:inline-flex;
+    align-items: center;    
+}
+
+.navbar-header > img{
+    margin-right: 0.75rem;
+    height: 90%;
+}
+.navbar-header > h2{
+    margin-top:0.35rem;
+}
+
+.navbar-body{
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import imgApp from '../../Images/notes.svg';
+import FormLogin from './FormLogin';
+import Loader from '../Loader/Loader';
 export default class LoginContainer extends React.Component{
+    
     render(){
         return(
             <div className="container-login">
@@ -10,25 +13,19 @@ export default class LoginContainer extends React.Component{
                     <h2>AppNotes</h2>
                     <h5>Tu Aplicación para registrar tus notas</h5>
                 </div>
-                <form className="container-body w-75">
-                    <input 
-                        className="input-email w-100"
-                        placeholder="Ingrese su Correo Electrónico" 
-                        type="email" required/>
-                    
-                    <input 
-                        className="input-pass w-100" 
-                        placeholder="Ingrese su Contraseña"
-                        type="password" required />
+                {!this.props.isLoading &&
+                    <FormLogin 
+                    modal={this.props.modal}
+                    onSubmit={this.props.onSubmit}
+                    onChangeLogin={this.props.onChangeLogin}
+                    formData={this.props.formData}/>
+                }
+                {this.props.isLoading &&
+                    <div className="container-body-loader">
+                        <Loader/>
+                    </div>
+                }
 
-                    <Link to="#" className="d-block link-lost-pass">
-                        <h5>¿olvidaste tu contraseña?</h5>
-                    </Link>
-
-                    <button type="submit" className="btn-login">
-                        Iniciar Sesión
-                    </button>                  
-                </form>
                 <Link to="/registro" className="d-block link-registrate">
                     <h5>No tienes una cuenta? regístrate aquí</h5>
                 </Link>
