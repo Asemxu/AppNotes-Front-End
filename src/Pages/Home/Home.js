@@ -8,7 +8,7 @@ export default class Home extends React.Component{
         super(props);
         this.state ={
             isMobileOrDesktop:undefined,
-            isLoading:true
+            isLoading:true,
         }
         document.title = "Bienvenido a App Notes"
     }
