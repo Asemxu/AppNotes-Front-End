@@ -7,6 +7,10 @@ import Register from '../Pages/Register/Register';
 import Home from '../Pages/Home/Home';
 import UpdatePassword from '../Pages/UpatePassword/UpdatePassword';
 import ActivateConfirmated from '../Pages/ActivaciónConfirmada/Activación';
+import Perfil from '../Pages/Perfil/Perfil';
+import NotFound from '../Pages/NotFound/NotFound';
+import LayoutHome from '../Layout/LayoutHome';
+
 export default class App extends React.Component {
   constructor(props){
     super(props);
@@ -24,22 +28,23 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
         <Layout isLogued={this.handleIsLogued}>
-            <Switch>
               {!this.state.isLogued &&
-                <React.Fragment>
+                <Switch>
                   <Route exact path="/actualizar-contraseña/:id" component={UpdatePassword}/>
                   <Route exact path="/activacion-confirmada/:id" component={ActivateConfirmated}/>
                   <Route exact path="/" component={Login} />   
                   <Route exact path="/registro" component={Register} />     
-                </React.Fragment> 
+                </Switch> 
               }
                {this.state.isLogued &&
-                <React.Fragment>
-                  <Route exact path="/" component={Home} />
-                  {/* <Route component={notFound} /> */}
-                </React.Fragment> 
+                <LayoutHome>
+                  <Switch>
+                    <Route exact path="/Perfil" component={Perfil} />
+                    <Route exact path="/" component={Home} />
+                    <Route component={NotFound} />
+                  </Switch> 
+                </LayoutHome>
               }
-            </Switch>
         </Layout>
       </BrowserRouter>
     );

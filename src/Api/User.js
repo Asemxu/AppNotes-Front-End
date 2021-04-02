@@ -25,6 +25,10 @@ export default class User {
         this.registrarUser = async (userData) =>{
             return await sendData(userData,"Registro");
         }
+
+        this.cerrarSesion = async (id) =>{
+            return await sendData({'id':id},"User/Cerrar-Sesion");
+        }
     }
 }
 

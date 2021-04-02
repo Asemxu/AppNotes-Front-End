@@ -1,8 +1,8 @@
 import React from 'react';
 import imgApp from '../../Images/notes.svg';
-import Loader from '../Loader/Loader';
 import Tooltip from 'react-power-tooltip'
 import imgSalir from '../../Images/salir.svg';
+import imgPerfil from '../../Images/perfil.svg';
 
 export default class NavbarMobile extends React.Component{
     constructor(props){
@@ -26,7 +26,6 @@ export default class NavbarMobile extends React.Component{
                         <h2>AppNotes</h2>
                     </div>
                     <div className="navbar-body">
-                        
                         <div className={`btn-menu ${this.state.isActive}`} 
                             onClick={this.setShowMenu}>
                             <div></div>
@@ -38,15 +37,27 @@ export default class NavbarMobile extends React.Component{
                         arrowAlign="end"
                         position="bottom right"
                         lineSeparated>
-                        <div><Loader/></div>
+                        <div className="item-perfil">
+                            {this.props.userData.avatar !== "" &&
+                                <img src={this.props.userData.avatar} alt="imagen Perfil"/>
+                            }
+                            {this.props.userData.avatar === "" &&
+                                <img src={imgPerfil} alt="imagen Perfil"/>
+                            }
+                            <h5>{this.props.userData.nombres} {this.props.userData.apellidos}</h5>
+                        </div>
                         <span></span>
-                        <div><Loader/></div>
+                        <div className="item">
+                            <img src={imgPerfil} alt="imagen Detalle Perfil"/>
+                            <h6>Ver Perfil</h6>
+                        </div>
                         <span></span>
-                        <div>
-                           <div className="item">
-                                <img src={imgSalir} alt="imagen Salir"/>
-                                <h6>Cerrar Sesión</h6>
-                           </div>
+                        <div className="item" onClick={ () => {
+                            this.setState({showMenu:false});
+                            this.props.modal();
+                            }}>
+                            <img src={imgSalir} alt="imagen Salir"/>
+                            <h6>Cerrar Sesión</h6>
                         </div>
                     </Tooltip> 
                 </div>
