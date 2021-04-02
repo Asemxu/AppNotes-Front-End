@@ -64,8 +64,8 @@ export default class LayoutHome extends React.Component{
     render(){
         if(!this.state.isLoading){
             return(
-                <main className="main-home">
-                    <header className="header-home">
+                <React.Fragment>
+                     <header className="header-home">
                         {this.state.isMobileOrDesktop &&
                             <NavbarMobile 
                                 userData={this.state.userData}
@@ -90,7 +90,7 @@ export default class LayoutHome extends React.Component{
                         </div>
                     }
                     <ToastContainer/>
-                </main>
+                </React.Fragment>
             )
         }else{
             return null;

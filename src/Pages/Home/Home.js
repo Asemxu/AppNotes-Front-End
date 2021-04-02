@@ -14,7 +14,7 @@ export default class Home extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <div className="home">
+                <div className="main-home">
                     <h1>Logueado</h1>
                 </div>                 
             </React.Fragment>

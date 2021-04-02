@@ -34,6 +34,7 @@ export default class App extends React.Component {
                   <Route exact path="/activacion-confirmada/:id" component={ActivateConfirmated}/>
                   <Route exact path="/" component={Login} />   
                   <Route exact path="/registro" component={Register} />     
+                  <Route component={NotFound} />
                 </Switch> 
               }
                {this.state.isLogued &&
