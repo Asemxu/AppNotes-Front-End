@@ -5,7 +5,7 @@ const FormContraseña = (props) =>{
                 <input 
                     className="input-email w-85"
                     placeholder="Correo Electrónico" 
-                    autoComplete="off"
+                    autoComplete="on"
                     name="correo"
                     value={props.formData.correo}
                     onChange={props.onChangeModal}
